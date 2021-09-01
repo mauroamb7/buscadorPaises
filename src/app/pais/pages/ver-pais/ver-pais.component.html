@@ -1,0 +1,86 @@
+<div class="alert alert-info" *ngIf="!pais; else verPais">Cargando...</div>
+
+<ng-template #verPais>
+  <div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-sm-12 col-md-4 d-flex align-items-center">
+        <img [src]="pais.flag" class="img-fluid rounded-start" alt="..." />
+      </div>
+      <div class="col-sm-12 col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ pais.name }}</h5>
+          <!-- Detalles -->
+          <ul class="list-group">
+            <li
+              class="
+                list-group-item
+                d-flex
+                justify-content-between
+                align-items-center
+              "
+            >
+              Capital:
+              <span class="badge bg-primary rounded-pill">{{
+                pais.capital
+              }}</span>
+            </li>
+            <li
+              class="
+                list-group-item
+                d-flex
+                justify-content-between
+                align-items-center
+              "
+            >
+              Población:
+              <span class="badge bg-primary rounded-pill">{{
+                pais.population | number
+              }}</span>
+            </li>
+            <li
+              class="
+                list-group-item
+                d-flex
+                justify-content-between
+                align-items-center
+              "
+            >
+              Sub región:
+              <span class="badge bg-primary rounded-pill">{{
+                pais.subregion
+              }}</span>
+            </li>
+          </ul>
+          <!-- Fin detalles -->
+          <!-- <p class="card-text">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>Traducciones</h3>
+      <span class="badge bg-primary rounded-pill mr-5">
+        {{ pais.translations.es }}</span
+      >
+      <span class="badge bg-primary rounded-pill mr-5">
+        {{ pais.translations.br }}</span
+      >
+      <span class="badge bg-primary rounded-pill mr-5">
+        {{ pais.translations.de }}</span
+      >
+      <span class="badge bg-primary rounded-pill mr-5">
+        {{ pais.translations.fa }}</span
+      >
+      <span class="badge bg-primary rounded-pill mr-5">
+        {{ pais.translations.fr }}</span
+      >
+      <span class="badge bg-primary rounded-pill mr-5">
+        {{ pais.translations.ja }}</span
+      >
+    </div>
+  </div>
+</ng-template>
